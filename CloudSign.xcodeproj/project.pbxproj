@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4454F49325047AA6007986E6 /* 19934-flirting-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 4454F49225047AA6007986E6 /* 19934-flirting-dog.json */; };
+		446456C32503D83300605DE0 /* CloudSignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446456C22503D83300605DE0 /* CloudSignApp.swift */; };
+		446456C52503D83300605DE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446456C42503D83300605DE0 /* LoginView.swift */; };
+		446456C72503D83500605DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446456C62503D83500605DE0 /* Assets.xcassets */; };
+		446456CA2503D83500605DE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446456C92503D83500605DE0 /* Preview Assets.xcassets */; };
+		446456D42503D96A00605DE0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446456D32503D96A00605DE0 /* CloudKit.framework */; };
+		448D63EA250481CE0053A767 /* 19938-happy-unicorn-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 448D63E9250481CE0053A767 /* 19938-happy-unicorn-dog.json */; };
+		44D871AE250475620031AFB9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 44D871AD250475620031AFB9 /* Lottie */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4454F49225047AA6007986E6 /* 19934-flirting-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19934-flirting-dog.json"; sourceTree = "<group>"; };
+		446456BF2503D83300605DE0 /* CloudSign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudSign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		446456C22503D83300605DE0 /* CloudSignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSignApp.swift; sourceTree = "<group>"; };
+		446456C42503D83300605DE0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		446456C62503D83500605DE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		446456C92503D83500605DE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		446456CB2503D83500605DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		446456D12503D96200605DE0 /* CloudSign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudSign.entitlements; sourceTree = "<group>"; };
+		446456D32503D96A00605DE0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		448D63E9250481CE0053A767 /* 19938-happy-unicorn-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19938-happy-unicorn-dog.json"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		446456BC2503D83300605DE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				446456D42503D96A00605DE0 /* CloudKit.framework in Frameworks */,
+				44D871AE250475620031AFB9 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		446456B62503D83300605DE0 = {
+			isa = PBXGroup;
+			children = (
+				446456C12503D83300605DE0 /* CloudSign */,
+				446456C02503D83300605DE0 /* Products */,
+				446456D22503D96A00605DE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		446456C02503D83300605DE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				446456BF2503D83300605DE0 /* CloudSign.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		446456C12503D83300605DE0 /* CloudSign */ = {
+			isa = PBXGroup;
+			children = (
+				446456D12503D96200605DE0 /* CloudSign.entitlements */,
+				446456C22503D83300605DE0 /* CloudSignApp.swift */,
+				446456C42503D83300605DE0 /* LoginView.swift */,
+				446456C62503D83500605DE0 /* Assets.xcassets */,
+				446456CB2503D83500605DE0 /* Info.plist */,
+				4454F49225047AA6007986E6 /* 19934-flirting-dog.json */,
+				448D63E9250481CE0053A767 /* 19938-happy-unicorn-dog.json */,
+				446456C82503D83500605DE0 /* Preview Content */,
+			);
+			path = CloudSign;
+			sourceTree = "<group>";
+		};
+		446456C82503D83500605DE0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				446456C92503D83500605DE0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		446456D22503D96A00605DE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				446456D32503D96A00605DE0 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		446456BE2503D83300605DE0 /* CloudSign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 446456CE2503D83500605DE0 /* Build configuration list for PBXNativeTarget "CloudSign" */;
+			buildPhases = (
+				446456BB2503D83300605DE0 /* Sources */,
+				446456BC2503D83300605DE0 /* Frameworks */,
+				446456BD2503D83300605DE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudSign;
+			packageProductDependencies = (
+				44D871AD250475620031AFB9 /* Lottie */,
+			);
+			productName = CloudSign;
+			productReference = 446456BF2503D83300605DE0 /* CloudSign.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		446456B72503D83300605DE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					446456BE2503D83300605DE0 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 446456BA2503D83300605DE0 /* Build configuration list for PBXProject "CloudSign" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 446456B62503D83300605DE0;
+			packageReferences = (
+				44D871AC250475620031AFB9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
+			productRefGroup = 446456C02503D83300605DE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				446456BE2503D83300605DE0 /* CloudSign */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		446456BD2503D83300605DE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4454F49325047AA6007986E6 /* 19934-flirting-dog.json in Resources */,
+				446456CA2503D83500605DE0 /* Preview Assets.xcassets in Resources */,
+				446456C72503D83500605DE0 /* Assets.xcassets in Resources */,
+				448D63EA250481CE0053A767 /* 19938-happy-unicorn-dog.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		446456BB2503D83300605DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				446456C52503D83300605DE0 /* LoginView.swift in Sources */,
+				446456C32503D83300605DE0 /* CloudSignApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		446456CC2503D83500605DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		446456CD2503D83500605DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		446456CF2503D83500605DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudSign/CloudSign.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CloudSign/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CloudSign/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.startway.CloudSign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		446456D02503D83500605DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudSign/CloudSign.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CloudSign/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CloudSign/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.startway.CloudSign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		446456BA2503D83300605DE0 /* Build configuration list for PBXProject "CloudSign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				446456CC2503D83500605DE0 /* Debug */,
+				446456CD2503D83500605DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		446456CE2503D83500605DE0 /* Build configuration list for PBXNativeTarget "CloudSign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				446456CF2503D83500605DE0 /* Debug */,
+				446456D02503D83500605DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		44D871AC250475620031AFB9 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44D871AD250475620031AFB9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44D871AC250475620031AFB9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 446456B72503D83300605DE0 /* Project object */;
+}
