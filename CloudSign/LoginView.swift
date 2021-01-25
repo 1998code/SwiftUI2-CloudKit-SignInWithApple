@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  CloudSign
 //
-//  Created on 9/5/20.
+//  Created on 9/5/20. Updated on 1/25/2020.
 //
 
 import SwiftUI
@@ -16,7 +16,7 @@ import Lottie
 // Start a new Login View
 struct LoginView: View {
     // Give a login state, by default, it is false => not logined.
-    @State private var login = false
+    @AppStorage("login") private var login = false
     // Play Lottie Animation by default
     @State var play = 1
     var body: some View {
