@@ -15,16 +15,20 @@ import Lottie
 
 // Start a new Login View
 struct LoginView: View {
+    
     // Give a login state, by default, it is false => not logined.
     @AppStorage("login") private var login = false
+    
     // Play Lottie Animation by default
     @State var play = 1
+    
     var body: some View {
-        // Use Navigation View to make Title works
+        // Use Navigation View
         NavigationView{
             ZStack{
-                // Add a background image (Perfer Gradient Image)
+                // Add a background image
                 Image("bg")
+                //Image(uiImage: UIImage(data: UserDefaults.standard.object(forKey: "demoImage") as! Data) as! UIImage)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                 
@@ -34,13 +38,16 @@ struct LoginView: View {
 
                     if (!login && (userID == nil)) {
                         Spacer()
+                        
                         HStack{
                             Spacer()
                             LottieView(name: "19934-flirting-dog", play: $play)
                                 .frame(width:400,height:400)
                                 .padding(.trailing,-95)
                         }.ignoresSafeArea(.all)
+                        
                         Spacer()
+                        
                         // If login = false and userID is not exist,
                         // Show Sign in with Apple Button.
                         SignInWithAppleButton(
@@ -109,6 +116,7 @@ struct LoginView: View {
                         )
                         .signInWithAppleButtonStyle(.white) // Button Style
                         .frame(width:350,height:50)         // Set Button Size (Read iOS 14 beta 7 release note)
+                        
                     }else{
                         // Hide the button after logined
                         LottieView(name: "19938-happy-unicorn-dog", play: $play)
