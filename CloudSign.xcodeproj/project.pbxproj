@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0355BD28794799001FFAE9 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0355BC28794799001FFAE9 /* LottieView.swift */; };
 		4454F49325047AA6007986E6 /* 19934-flirting-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 4454F49225047AA6007986E6 /* 19934-flirting-dog.json */; };
 		446456C32503D83300605DE0 /* CloudSignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446456C22503D83300605DE0 /* CloudSignApp.swift */; };
 		446456C52503D83300605DE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446456C42503D83300605DE0 /* LoginView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A0355BC28794799001FFAE9 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		4454F49225047AA6007986E6 /* 19934-flirting-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "19934-flirting-dog.json"; sourceTree = "<group>"; };
 		446456BF2503D83300605DE0 /* CloudSign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudSign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446456C22503D83300605DE0 /* CloudSignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSignApp.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				446456D12503D96200605DE0 /* CloudSign.entitlements */,
 				446456C22503D83300605DE0 /* CloudSignApp.swift */,
 				446456C42503D83300605DE0 /* LoginView.swift */,
+				3A0355BC28794799001FFAE9 /* LottieView.swift */,
 				446456C62503D83500605DE0 /* Assets.xcassets */,
 				446456CB2503D83500605DE0 /* Info.plist */,
 				4454F49225047AA6007986E6 /* 19934-flirting-dog.json */,
@@ -170,6 +173,7 @@
 			files = (
 				446456C52503D83300605DE0 /* LoginView.swift in Sources */,
 				446456C32503D83300605DE0 /* CloudSignApp.swift in Sources */,
+				3A0355BD28794799001FFAE9 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,15 +303,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CloudSign/CloudSign.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CloudSign/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CloudSign/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.startway.CloudSign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -322,15 +329,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CloudSign/CloudSign.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CloudSign/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CloudSign/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.startway.CloudSign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -367,7 +377,7 @@
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.8;
+				minimumVersion = 3.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -6,12 +6,8 @@
 //
 
 import SwiftUI
-// import Auth Services to make Sign in with Apple works
-import AuthenticationServices
-// import CloudKit for iCloud Service
-import CloudKit
-// import Lottie Animation Library
-import Lottie
+import CloudKit                 // import CloudKit for iCloud Service
+import AuthenticationServices   // import Auth Services to make Sign in with Apple works
 
 // Start a new Login View
 struct LoginView: View {
@@ -19,184 +15,167 @@ struct LoginView: View {
     // Give a login state, by default, it is false => not logined.
     @AppStorage("login") private var login = false
     
-    // Play Lottie Animation by default
-    @State var play = 1
+    @AppStorage("email") private var email = ""
+    @AppStorage("firstName") private var firstName = ""
+    @AppStorage("lastName") private var lastName = ""
+    @AppStorage("userID") private var userID = ""
+    
+    
+    init() {
+        CKContainer.default().publicCloudDatabase.fetch(withRecordID: CKRecord.ID(recordName: "2EADC63D-0EB0-3968-A068-278DB49426AE")){(record, error) in
+            if let fetchedInfo = record {
+                let assets = fetchedInfo["Image"] as? CKAsset
+                let assetsData = NSData(contentsOf: (assets?.fileURL!)!)
+                // You may try print(assetsData) and view on Console
+                // Save the data
+                UserDefaults.standard.set(assetsData, forKey: "cloudBG")
+           }
+        }
+    }
     
     var body: some View {
         // Use Navigation View
         NavigationView{
             ZStack{
-                // Add a background image
-                Image("bg")
-                //Image(uiImage: UIImage(data: UserDefaults.standard.object(forKey: "demoImage") as! Data) as! UIImage)
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
+                // Background image
+                if UserDefaults.standard.object(forKey: "cloudBG") == nil {
+                    Image("localBG").resizable().edgesIgnoringSafeArea(.all)
+                } else {
+                    Image(uiImage: UIImage(data: UserDefaults.standard.object(forKey: "cloudBG") as! Data) as! UIImage).resizable().edgesIgnoringSafeArea(.all)
+                }
                 
                 VStack {
-                    // Let userID = saved userID
-                    let userID = UserDefaults.standard.object(forKey: "userID") as? String
-
-                    if (!login && (userID == nil)) {
+                    if (!login && (userID == "")) {
                         Spacer()
                         
                         HStack{
                             Spacer()
-                            LottieView(name: "19934-flirting-dog", play: $play)
+                            LottieView(name: "19934-flirting-dog")
                                 .frame(width:400,height:400)
                                 .padding(.trailing,-95)
                         }.ignoresSafeArea(.all)
                         
                         Spacer()
                         
-                        // If login = false and userID is not exist,
-                        // Show Sign in with Apple Button.
-                        SignInWithAppleButton(
-                            // Request User FullName and Email
-                            onRequest: { request in
-                                // You can change them if needed.
-                                request.requestedScopes = [.fullName, .email]
-                            },
-                            // Once user complete, get result
-                            onCompletion: { result in
-                                // Switch result
-                                switch result {
-                                    // Auth Success
-                                    case .success(let authResults):
-
-                                    switch authResults.credential {
-                                        case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                                            let userID = appleIDCredential.user
-                                            if let firstName = appleIDCredential.fullName?.givenName,
-                                                let lastName = appleIDCredential.fullName?.familyName,
-                                                let email = appleIDCredential.email{
-                                                // For New user to signup, and
-                                                // save the 3 records to CloudKit
-                                                let record = CKRecord(recordType: "UsersData", recordID: CKRecord.ID(recordName: userID))
-                                                record["email"] = email
-                                                record["firstName"] = firstName
-                                                record["lastName"] = lastName
-                                                // Save to local
-                                                UserDefaults.standard.set(email, forKey: "email")
-                                                UserDefaults.standard.set(firstName, forKey: "firstName")
-                                                UserDefaults.standard.set(lastName, forKey: "lastName")
-                                                let publicDatabase = CKContainer.default().publicCloudDatabase
-                                                publicDatabase.save(record) { (_, _) in
-                                                    UserDefaults.standard.set(record.recordID.recordName, forKey: "userID")
-                                                }
-                                                // Change login state
-                                                self.login = true
-                                            } else {
-                                                // For returning user to signin,
-                                                // fetch the saved records from Cloudkit
-                                                let publicDatabase = CKContainer.default().publicCloudDatabase
-                                                publicDatabase.fetch(withRecordID: CKRecord.ID(recordName: userID)) { (record, error) in
-                                                    if let fetchedInfo = record {
-                                                        let email = fetchedInfo["email"] as? String
-                                                        let firstName = fetchedInfo["firstName"] as? String
-                                                        let lastName = fetchedInfo["lastName"] as? String
-                                                        // Save to local
-                                                        UserDefaults.standard.set(userID, forKey: "userID")
-                                                        UserDefaults.standard.set(email, forKey: "email")
-                                                        UserDefaults.standard.set(firstName, forKey: "firstName")
-                                                        UserDefaults.standard.set(lastName, forKey: "lastName")
-                                                        // Change login state
-                                                        self.login = true
-                                                    }
-                                                }
-                                            }
-                                        
-                                        // default break (don't remove)
-                                        default:
-                                            break
-                                        }
-                                    case .failure(let error):
-                                        print("failure", error)
-                                }
-                            }
-                        )
-                        .signInWithAppleButtonStyle(.white) // Button Style
-                        .frame(width:350,height:50)         // Set Button Size (Read iOS 14 beta 7 release note)
+                        signInWithApple
                         
-                    }else{
+                    }
+                    else{
                         // Hide the button after logined
-                        LottieView(name: "19938-happy-unicorn-dog", play: $play)
+                        LottieView(name: "19938-happy-unicorn-dog")
                     }
                     
                     // Show User Info
-                    if let userID = UserDefaults.standard.object(forKey: "userID") as? String {
-                        VStack(alignment: .leading) {
-                        
-                            if let firstName = UserDefaults.standard.object(forKey: "firstName") as? String,
-                            let lastName = UserDefaults.standard.object(forKey: "lastName") as? String{
-                                Label(NSLocalizedString("Welcome back", comment: "") + "! " + firstName + " " + lastName, systemImage: "lock.rotation.open")
-                                    .font(.footnote)
-                            }
-                            if let email = UserDefaults.standard.object(forKey: "email") as? String {
-                                HStack {
-                                    Label(NSLocalizedString("Your Email", comment: "") + ": ", systemImage: "envelope.circle")
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        Text(email)
-                                    }
-                                }.font(.footnote)
-                            }
-                            
-                            HStack {
-                                Label(NSLocalizedString("User ID", comment: "") + ": ", systemImage: "person.crop.circle")
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    Text(userID)
-                                }
-                            }.font(.footnote)
-                        }
-                        .padding()
-                        .background(Color("WB").opacity(0.5))
-                        .cornerRadius(25)
+                    if userID != "" {
+                        userInfo
                     }
                 }.padding()
             }
+            .toolbar {
+                if (login && (userID != "")) {
+                    Button(action: {
+                        login = false
+                        userID = ""
+                        email = ""
+                        firstName = ""
+                        lastName = ""
+                    }) {
+                        Text("Sign out").foregroundColor(.white)
+                    }
+                }
+            }
             .navigationTitle("CloudSign")
+            .preferredColorScheme(.dark)
         }
     }
-}
-
-// Lottie Animation View in UIViewRepresentable
-struct LottieView: UIViewRepresentable {
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+    
+    var signInWithApple: some View {
+        SignInWithAppleButton(
+            // Request User FullName and Email
+            onRequest: { request in
+                request.requestedScopes = [.fullName, .email]   // You can change them if needed.
+            },
+            // Once user complete login, get result
+            onCompletion: { result in
+                // Switch result
+                switch result {
+                    // Auth Success
+                    case .success(let authResults):
+                    switch authResults.credential {
+                        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                            let uID = appleIDCredential.user
+                        
+                            if let emailAddress = appleIDCredential.email,
+                            let givenName = appleIDCredential.fullName?.givenName,
+                            let familyName = appleIDCredential.fullName?.familyName {
+                                
+                                // For New user to signup, and save the 3 records to CloudKit
+                                let record = CKRecord(recordType: "UsersData", recordID: CKRecord.ID(recordName: uID))
+                                record["email"] = emailAddress
+                                record["firstName"] = givenName
+                                record["lastName"] = familyName
+                                CKContainer.default().publicCloudDatabase.save(record) { (_, _) in
+                                    userID = record.recordID.recordName
+                                }
+                                
+                                // Save to local
+                                email = emailAddress
+                                firstName = givenName
+                                lastName = familyName
+                                
+                                // Change login state
+                                self.login = true
+                                
+                            } else {
+                                // For returning user to signin, fetch the saved records from Cloudkit
+                                CKContainer.default().publicCloudDatabase.fetch(withRecordID: CKRecord.ID(recordName: userID)) { (record, error) in
+                                    if let fetchedInfo = record {
+                                        // Save to local
+                                        userID = uID
+                                        email = fetchedInfo["email"] as! String
+                                        firstName = fetchedInfo["firstName"] as! String
+                                        lastName = fetchedInfo["lastName"] as! String
+                                        
+                                        // Change login state
+                                        self.login = true
+                                    }
+                                }
+                            }
+                        
+                        // default break (don't remove)
+                        default:
+                            break
+                        }
+                    case .failure(let error):
+                        print("failure", error)
+                }
+            }
+        )
+        .signInWithAppleButtonStyle(.white) // Button Style
+        .frame(width:350,height:50)         // Set Button Size (Read iOS 14 beta 7 release note)
     }
-
-    var name: String!
-    @Binding var play:Int
-
-    var animationView = AnimationView()
-
-    class Coordinator: NSObject {
-        var parent: LottieView
-
-        init(_ animationView: LottieView) {
-            self.parent = animationView
-            super.init()
+    
+    var userInfo: some View {
+        VStack(alignment: .leading) {
+            Label(NSLocalizedString("Welcome back", comment: "") + "! " + firstName + " " + lastName, systemImage: "lock.rotation.open")
+                .font(.footnote)
+            
+            HStack {
+                Label(NSLocalizedString("Your Email", comment: "") + ": ", systemImage: "envelope.circle")
+                ScrollView(.horizontal, showsIndicators: false) {
+                    Text(email)
+                }
+            }.font(.footnote)
+            
+            HStack {
+                Label(NSLocalizedString("User ID", comment: "") + ": ", systemImage: "person.crop.circle")
+                ScrollView(.horizontal, showsIndicators: false) {
+                    Text(userID)
+                }
+            }.font(.footnote)
         }
-    }
-
-    func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
-        let view = UIView()
-
-        animationView.animation = Animation.named(name)
-        animationView.contentMode = .scaleAspectFit
-
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(animationView)
-
-        NSLayoutConstraint.activate([
-            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
-        ])
-
-        return view
-    }
-
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
-        animationView.loopMode = .loop
-        animationView.play()
+        .padding()
+        .background(Color("WB").opacity(0.5))
+        .cornerRadius(25)
     }
 }
