@@ -20,7 +20,6 @@ struct LoginView: View {
     @AppStorage("lastName") private var lastName = ""
     @AppStorage("userID") private var userID = ""
     
-    
     init() {
         CKContainer.default().publicCloudDatabase.fetch(withRecordID: CKRecord.ID(recordName: "2EADC63D-0EB0-3968-A068-278DB49426AE")){(record, error) in
             if let fetchedInfo = record {
