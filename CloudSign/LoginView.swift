@@ -127,7 +127,7 @@ struct LoginView: View {
                                 
                             } else {
                                 // For returning user to signin, fetch the saved records from Cloudkit
-                                CKContainer.default().publicCloudDatabase.fetch(withRecordID: CKRecord.ID(recordName: userID)) { (record, error) in
+                                CKContainer.default().publicCloudDatabase.fetch(withRecordID: CKRecord.ID(recordName: uID)) { (record, error) in
                                     if let fetchedInfo = record {
                                         // Save to local
                                         userID = uID
