@@ -33,16 +33,19 @@ struct LoginView: View {
     }
     
     var body: some View {
-        // Use Navigation View
         NavigationView{
             ZStack{
                 // Background image
                 if UserDefaults.standard.object(forKey: "cloudBG") == nil {
-                    Image("localBG").resizable().edgesIgnoringSafeArea(.all)
+                    Image("localBG")
+                        .resizable()
+                        .edgesIgnoringSafeArea(.all)
                 } else {
-                    Image(uiImage: UIImage(data: UserDefaults.standard.object(forKey: "cloudBG") as! Data) as! UIImage).resizable().edgesIgnoringSafeArea(.all)
+                    Image(uiImage: UIImage(data: UserDefaults.standard.object(forKey: "cloudBG") as! Data)!)
+                        .resizable()
+                        .edgesIgnoringSafeArea(.all)
                 }
-                
+                // Content
                 VStack {
                     if (!login && (userID == "")) {
                         Spacer()
